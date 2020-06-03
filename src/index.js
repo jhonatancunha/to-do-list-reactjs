@@ -1,11 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// CONFIGURANDO REDUX
+import { createStore } from 'redux';
+import reducer from './redux-flow/reducers/todos';
+// ----
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const store = createStore(reducer);
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App store={store} />
   </React.StrictMode>,
   document.getElementById('root')
 );
