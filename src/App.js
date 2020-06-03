@@ -12,13 +12,16 @@ const App = ({ todos, handleAddToDo }) => {
       </form>
       {console.log(todos)}
       <ul>
-        <li style={{ textDecoration: 'line-through' }} className="completed">
-          Item 1
-        </li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-        <li>Item 5</li>
+        {todos.map((item) => (
+          <li
+            key={item.id}
+            style={{
+              textDecorationColor: item.completed ? 'line-through' : 'none',
+            }}
+          >
+            {item.text}
+          </li>
+        ))}
       </ul>
 
       <div>
