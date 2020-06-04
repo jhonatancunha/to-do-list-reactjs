@@ -10,10 +10,6 @@ import * as serviceWorker from './serviceWorker';
 
 const store = createStore(reducer);
 
-store.subscribe(() => {
-  console.log('state', store.getState());
-});
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
