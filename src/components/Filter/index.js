@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import * as actions from '../../redux-flow/reducers/visibilityFilter/actions';
 import { setVisibilityFilter } from '../../redux-flow/reducers/visibilityFilter/action-creators';
 
+// COMPONENTS
+import FilterLink from './filter-link';
+
 const filterItems = [
   { label: 'Todos', action: actions.SHOW_ALL },
   { label: 'Finalizados', action: actions.SHOW_COMPLETED },
@@ -14,25 +17,16 @@ const Filter = ({ activeFilter, handleFilter }) => (
   <div>
     <h3>Mostrar</h3>
 
-    {filterItems.map((item) => {
-      if (item.action === activeFilter) {
-        return (
-          <span style={{ margin: 5 }} key={item.action}>
-            {item.label}
-          </span>
-        );
-      }
-      return (
-        <button
-          onClick={handleFilter(item.action)}
-          type="button"
-          style={{ margin: 5 }}
-          key={item.action}
-        >
-          {item.label}
-        </button>
-      );
-    })}
+    {filterItems.map((item) => (
+      <FilterLink
+        key={item.action}
+        activeFilter={activeFilter}
+        action={item.action}
+        onClick={handleFilter(item.action)}
+      >
+        {item.label}
+      </FilterLink>
+    ))}
   </div>
 );
 
