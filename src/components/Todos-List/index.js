@@ -2,10 +2,21 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { toogleToDo } from '../../redux-flow/reducers/todos/action-creators';
+import * as filterActions from '../../redux-flow/reducers/visibilityFilter/actions';
 
-const TodosList = ({ todos, handleToogleToDo }) => (
+const getVisible = (todos, activeFilter) => {
+  const filterItems = {
+    [filterActions.SHOW_ALL]: todos,
+    [filterActions.SHOW_COMPLETED]: todos.filter((item) => item.completed),
+    [filterActions.SHOW_ACTIVE]: todos.filter((item) => !item.completed),
+  };
+
+  return filterItems[activeFilter];
+};
+
+const TodosList = ({ todos, handleToogleToDo, activeFilter }) => (
   <ul>
-    {todos.map((item) => (
+    {getVisible(todos, activeFilter).map((item) => (
       // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
       <li
         key={item.id}
@@ -23,6 +34,7 @@ const TodosList = ({ todos, handleToogleToDo }) => (
 
 const mapStateToProps = (state) => ({
   todos: state.todos,
+  activeFilter: state.visibilityFilter,
 });
 const mapDispatchToProps = (dispatch) => ({
   handleToogleToDo: (id) => (e) => {
