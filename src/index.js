@@ -8,7 +8,16 @@ import reducer from './redux-flow/reducers';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(reducer);
+// FUNCÕES PARA SALVAR NO LOCALSTORAGE
+import { loadStorage, saveStorage } from './localStorage';
+
+const store = createStore(reducer, loadStorage());
+
+store.subscribe(() => {
+  saveStorage({
+    todos: store.getState(),
+  });
+});
 
 ReactDOM.render(
   <React.StrictMode>

@@ -14,9 +14,9 @@ const getVisible = (todos, activeFilter) => {
   return filterItems[activeFilter];
 };
 
-const TodosList = ({ todos, handleToogleToDo, activeFilter }) => (
+const TodosList = ({ listTodos, handleToogleToDo, activeFilter }) => (
   <ul>
-    {getVisible(todos, activeFilter).map((item) => (
+    {getVisible(listTodos, activeFilter).map((item) => (
       // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
       <li
         key={item.id}
@@ -33,7 +33,7 @@ const TodosList = ({ todos, handleToogleToDo, activeFilter }) => (
 );
 
 const mapStateToProps = (state) => ({
-  todos: state.todos,
+  listTodos: state.todos,
   activeFilter: state.visibilityFilter,
 });
 const mapDispatchToProps = (dispatch) => ({
