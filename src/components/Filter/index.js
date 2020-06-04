@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import * as actions from '../../redux-flow/reducers/visibilityFilter/actions';
+import { setVisibilityFilter } from '../../redux-flow/reducers/visibilityFilter/action-creators';
 
 const filterItems = [
   { label: 'Todos', action: actions.SHOW_ALL },
@@ -9,7 +10,7 @@ const filterItems = [
   { label: 'A fazer', action: actions.SHOW_ACTIVE },
 ];
 
-const Filter = ({ activeFilter }) => (
+const Filter = ({ activeFilter, handleFilter }) => (
   <div>
     <h3>Mostrar</h3>
 
@@ -22,23 +23,28 @@ const Filter = ({ activeFilter }) => (
         );
       }
       return (
-        <button type="button" style={{ margin: 5 }} key={item.action}>
+        <button
+          onClick={handleFilter(item.action)}
+          type="button"
+          style={{ margin: 5 }}
+          key={item.action}
+        >
           {item.label}
         </button>
       );
     })}
-
-    {/* <span>Todos </span> | <a href="#"> Finalizados </a> |
-    <a href="#"> A fazer </a> */}
   </div>
 );
-
-// const filterItems = ['Todos', 'Finalizados', 'A fazer'];
 
 const mapStateToProps = (state) => ({
   activeFilter: state.visibilityFilter,
 });
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  handleFilter: (filter) => (e) => {
+    e.preventDefault();
+    dispatch(setVisibilityFilter(filter));
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
