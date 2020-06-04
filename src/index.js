@@ -3,12 +3,24 @@ import ReactDOM from 'react-dom';
 // CONFIGURANDO REDUX
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducer from './redux-flow/reducers/todos';
+import reducerTodos from './redux-flow/reducers/todos';
+import reducerVisibilityFilter from './redux-flow/reducers/visibilityFilter';
 // ----
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const reducer = (state = {}, action) => {
+  return {
+    todos: reducerTodos(state.todos, action),
+    visibilityFilter: reducerVisibilityFilter(state.visibilityFilter, action),
+  };
+};
+
 const store = createStore(reducer);
+
+store.subscribe(() => {
+  console.log('state', store.getState());
+});
 
 ReactDOM.render(
   <React.StrictMode>

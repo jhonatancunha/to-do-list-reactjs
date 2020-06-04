@@ -13,7 +13,7 @@ const App = ({ todos, handleAddToDo, handleToogleToDo }) => {
         <input type="text" name="todo" />
         <button type="submit">Adicionar</button>
       </form>
-      {console.log(todos)}
+
       <ul>
         {todos.map((item) => (
           // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
@@ -40,7 +40,7 @@ const App = ({ todos, handleAddToDo, handleToogleToDo }) => {
 };
 
 const mapStateToProps = (state) => ({
-  todos: state,
+  todos: state.todos,
 });
 
 const mapDispatchToProps = (dispatch) => ({
