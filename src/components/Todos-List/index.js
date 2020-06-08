@@ -33,15 +33,11 @@ const TodosList = ({
   <Wrapper>
     {getVisible(listTodos, activeFilter).map((item) => (
       // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-      <Line
-        key={item.id}
-        style={{
-          textDecoration: item.completed ? 'line-through' : 'none',
-        }}
-      >
+      <Line key={item.id}>
         <TitleItem
           onClick={handleToogleToDo(item.id)}
           onKeyDown={handleToogleToDo(item.id)}
+          status={item.completed}
         >
           {item.text}
         </TitleItem>

@@ -32,11 +32,18 @@ export const Line = styled.li`
 
 export const TitleItem = styled.span`
   font-size: 1.2em;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
+  width: calc(100% - 35px);
+  display: inline-block;
   cursor: pointer;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  text-decoration: ${(props) => (props.status ? 'line-through' : 'none')};
+  color: ${(props) => (props.status ? '#083836' : '#232222')};
+  font-weight: ${(props) => (props.status ? 'bold' : 'normal')};
+  filter: ${(props) => (props.status ? 'opacity(50%)' : 'opacity(100%)')};
 `;
 
 export const DeleteButton = styled.button`
