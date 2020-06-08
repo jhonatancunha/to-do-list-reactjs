@@ -32,9 +32,10 @@ export const Line = styled.li`
 
 export const TitleItem = styled.span`
   font-size: 1.2em;
-  width: calc(100% - 35px);
+  width: calc(100% - 49px);
   display: inline-block;
   cursor: pointer;
+  margin-left: 5px;
 
   white-space: nowrap;
   overflow: hidden;

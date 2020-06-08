@@ -13,6 +13,8 @@ import { Wrapper, Line, TitleItem, DeleteButton } from './style';
 
 // ICONS
 import { ReactComponent as DeleteIcon } from '../../assets/delete.svg';
+import { ReactComponent as Active } from '../../assets/active.svg';
+import { ReactComponent as Completed } from '../../assets/checked.svg';
 
 const getVisible = (todos, activeFilter) => {
   const filterItems = {
@@ -34,6 +36,8 @@ const TodosList = ({
     {getVisible(listTodos, activeFilter).map((item) => (
       // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
       <Line key={item.id}>
+        {item.completed ? <Completed /> : <Active />}
+
         <TitleItem
           onClick={handleToogleToDo(item.id)}
           onKeyDown={handleToogleToDo(item.id)}
