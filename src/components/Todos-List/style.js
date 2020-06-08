@@ -52,4 +52,11 @@ export const DeleteButton = styled.button`
   border: 0;
   height: 27px;
   cursor: pointer;
+
+  transition: transform 0.2s ease-in-out;
+  @media (hover: hover) {
+    :hover {
+      transform: translateY(-3px);
+    }
+  }
 `;

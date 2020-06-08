@@ -44,4 +44,12 @@ export const Button = styled.button`
     margin-left: 30px;
     width: 100px;
   }
+  transition: all 0.2s ease-in-out;
+  @media (hover: hover) {
+    :hover {
+      background: #fcf9f9;
+      color: #e84a5f;
+      border: 2px solid #e84a5f;
+    }
+  }
 `;
