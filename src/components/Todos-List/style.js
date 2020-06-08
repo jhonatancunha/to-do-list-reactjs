@@ -2,12 +2,19 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.ul`
   list-style: none;
-  margin-top: 30px;
   border-radius: 5px;
-  height: 350px;
   overflow-y: scroll;
   background: #fcf9f9;
   color: #232222;
+
+  @media (min-width: 800px) {
+    height: 350px;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 799px) {
+    height: calc(100vh - 70px - 70px - 64px);
+  }
 `;
 
 export const Line = styled.li`
