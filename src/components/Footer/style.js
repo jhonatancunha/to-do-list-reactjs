@@ -15,6 +15,11 @@ export const Wrapper = styled.footer`
   span {
     color: #fcf9f9;
     margin-right: 100px;
+
+    @media (max-width: 800px) {
+      margin-right: 15px;
+      font-size: 0.9rem;
+    }
   }
 `;
 
@@ -24,5 +29,9 @@ export const Links = styled.div`
     a {
       margin: 5px;
     }
+  }
+
+  a {
+    margin-left: 15px;
   }
 `;

@@ -32,6 +32,11 @@ export const Line = styled.li`
 
 export const TitleItem = styled.span`
   font-size: 1.2em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 `;
 
 export const DeleteButton = styled.button`
