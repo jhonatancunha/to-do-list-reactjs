@@ -7,6 +7,7 @@ export const Wrapper = styled.ul`
   height: 350px;
   overflow-y: scroll;
   background: #fcf9f9;
+  color: #232222;
 `;
 
 export const Line = styled.li`

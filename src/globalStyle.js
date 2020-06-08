@@ -18,13 +18,14 @@ export const GlobalStyle = createGlobalStyle`
       display: none;
   }
 
-  .wrapper{
-    display: flex;
-    justify-content: center;
-    margin-top: 15vh;
-  }
 
   @media (min-width: 800px){
+    .wrapper{
+      display: flex;
+      justify-content: center;
+      margin-top: 15vh;
+    }
+
     #root{
       height: calc(100vh - 15vh);
     }

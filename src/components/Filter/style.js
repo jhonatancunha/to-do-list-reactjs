@@ -7,9 +7,10 @@ export const Wrapper = styled.div`
 `;
 
 export const Button = styled.button`
-  margin: 10px;
-  height: 50px;
-  width: 213px;
+  margin-top: 10px;
+  margin-right: 20px;
+  height: 47px;
+  width: 202px;
   border-radius: 2px;
   border: 0;
 
@@ -21,11 +22,14 @@ export const Button = styled.button`
 `;
 
 export const Span = styled.span`
-  margin: 10px;
-  height: 50px;
-  width: 213px;
+  margin-top: 10px;
+  margin-right: 20px;
+  height: 47px;
+  width: 202px;
   border: 2px solid #232222;
   border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.1rem;
 
   display: flex;
   justify-content: center;
