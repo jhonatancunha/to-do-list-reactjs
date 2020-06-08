@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.form`
-  padding: 10px;
-  background: #232222;
+  @media (max-width: 800px) {
+    padding: 10px;
+    background: #232222;
+  }
 `;
 
 export const Input = styled.input`
@@ -12,9 +14,9 @@ export const Input = styled.input`
   color: #fcf9f9;
   background: #232222;
   padding: 20px;
-  width: 70vw;
+  width: calc(100vw - 80px - 25px);
 
-  @media (max-width: 799px) {
+  @media (max-width: 800px) {
     background: #fcf9f9;
     color: #232222;
     font-size: 0.9rem;
@@ -35,7 +37,7 @@ export const Button = styled.button`
   font-weight: bold;
   height: 49.5px;
   margin-left: 5px;
-  width: calc(30vw - 30px);
+  width: 80px;
 
   @media (min-width: 800px) {
     font-size: 1.1rem;
