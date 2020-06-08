@@ -3,7 +3,7 @@ import deepfreeze from 'deep-freeze';
 import todos, { initialState } from './index';
 
 // ACTION
-import { ADD_TODO, TOOGLE_TODO } from './actions';
+import { ADD_TODO, TOOGLE_TODO, REMOVE_TODO } from './actions';
 
 // TESTES DE CAMINHO FELIZ
 
@@ -64,6 +64,50 @@ it('should toogle first todo item', () => {
 
   const after = [
     { id: 0, text: 'Hey', completed: true },
+    { id: 1, text: 'Ho', completed: false },
+  ];
+
+  expect(todos(before, action)).to.be.deep.equal(after);
+});
+
+it('should remove todo item', () => {
+  const before = deepfreeze([
+    { id: 0, text: 'Hey', completed: false },
+    { id: 1, text: 'Ho', completed: false },
+  ]);
+  const action = deepfreeze({ type: REMOVE_TODO, payload: { id: 0 } });
+
+  const after = [{ id: 1, text: 'Ho', completed: false }];
+
+  expect(todos(before, action)).to.be.deep.equal(after);
+});
+
+it('should remove another todo item', () => {
+  const before = deepfreeze([
+    { id: 0, text: 'Hey', completed: false },
+    { id: 1, text: 'Ho', completed: false },
+    { id: 2, text: 'lets go', completed: false },
+  ]);
+  const action = deepfreeze({ type: REMOVE_TODO, payload: { id: 1 } });
+
+  const after = [
+    { id: 0, text: 'Hey', completed: false },
+    { id: 2, text: 'lets go', completed: false },
+  ];
+
+  expect(todos(before, action)).to.be.deep.equal(after);
+});
+
+it('should remove another todo item', () => {
+  const before = deepfreeze([
+    { id: 0, text: 'Hey', completed: false },
+    { id: 1, text: 'Ho', completed: false },
+    { id: 2, text: 'lets go', completed: false },
+  ]);
+  const action = deepfreeze({ type: REMOVE_TODO, payload: { id: 2 } });
+
+  const after = [
+    { id: 0, text: 'Hey', completed: false },
     { id: 1, text: 'Ho', completed: false },
   ];
 

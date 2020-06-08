@@ -1,24 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import * as actions from '../../redux-flow/reducers/visibilityFilter/actions';
 import { setVisibilityFilter } from '../../redux-flow/reducers/visibilityFilter/action-creators';
 
 // COMPONENTS
 import FilterLink from './filter-link';
 
+// STYLES
+import { Wrapper, BtnNotCompleted, BtnFinished, Button } from './style';
+
 const filterItems = [
-  { label: 'Todos', action: actions.SHOW_ALL },
-  { label: 'Finalizados', action: actions.SHOW_COMPLETED },
-  { label: 'A fazer', action: actions.SHOW_ACTIVE },
+  { label: 'TODOS', action: actions.SHOW_ALL, component: Button },
+  {
+    label: 'FINALIZADOS',
+    action: actions.SHOW_COMPLETED,
+    component: BtnFinished,
+  },
+  { label: 'ATIVOS', action: actions.SHOW_ACTIVE, component: BtnNotCompleted },
 ];
 
 const Filter = ({ activeFilter, handleFilter }) => (
-  <div>
-    <h3>Mostrar</h3>
-
+  <Wrapper>
     {filterItems.map((item) => (
       <FilterLink
+        component={item.component}
         key={item.action}
         activeFilter={activeFilter}
         action={item.action}
@@ -27,7 +32,7 @@ const Filter = ({ activeFilter, handleFilter }) => (
         {item.label}
       </FilterLink>
     ))}
-  </div>
+  </Wrapper>
 );
 
 const mapStateToProps = (state) => ({

@@ -3,11 +3,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addToDo } from '../../redux-flow/reducers/todos/action-creators';
 
+// STYLE
+import { Wrapper, Input, Button } from './style';
+
 const Form = ({ handleAddToDo }) => (
-  <form onSubmit={handleAddToDo}>
-    <input type="text" name="todo" />
-    <button type="submit">Adicionar</button>
-  </form>
+  <Wrapper onSubmit={handleAddToDo}>
+    <Input placeholder="Digite aqui sua tarefa..." type="text" name="todo" />
+    <Button type="submit">ENVIAR</Button>
+  </Wrapper>
 );
 
 const mapDispatchToProps = (dispatch) => ({

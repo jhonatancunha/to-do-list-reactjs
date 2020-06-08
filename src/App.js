@@ -1,17 +1,19 @@
 import React from 'react';
 
 // COMPONENTS
-import Form from './components/Form';
-import TodosList from './components/Todos-List';
-import Filter from './components/Filter';
+import Container from './components/Container';
+import Illustration from './assets/illustration.svg';
+
+// STYLE
+import { GlobalStyle } from './globalStyle';
 
 const App = () => {
   return (
-    <div>
-      <Form />
-      <TodosList />
-      <Filter />
-    </div>
+    <>
+      <GlobalStyle />
+      <img className="illustration" src={Illustration} alt="ToDoList!" />
+      <Container />
+    </>
   );
 };
 

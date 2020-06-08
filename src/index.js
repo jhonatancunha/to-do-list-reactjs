@@ -15,7 +15,7 @@ const store = createStore(reducer, loadStorage());
 
 store.subscribe(() => {
   saveStorage({
-    todos: store.getState(),
+    todos: store.getState().todos,
   });
 });
 

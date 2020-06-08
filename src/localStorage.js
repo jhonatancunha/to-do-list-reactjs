@@ -11,6 +11,6 @@ export const loadStorage = () => {
 
 export const saveStorage = (todoList) => {
   try {
-    localStorage.setItem('listTodo', JSON.stringify(todoList.todos));
+    localStorage.setItem('listTodo', JSON.stringify(todoList));
   } catch (err) {}
 };
