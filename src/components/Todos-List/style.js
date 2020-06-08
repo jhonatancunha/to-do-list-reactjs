@@ -54,6 +54,7 @@ export const DeleteButton = styled.button`
   cursor: pointer;
 
   transition: transform 0.2s ease-in-out;
+
   @media (hover: hover) {
     :hover {
       transform: translateY(-3px);

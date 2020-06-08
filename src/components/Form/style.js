@@ -11,8 +11,6 @@ export const Input = styled.input`
   height: 48px;
   border: 0;
   border-radius: 4px;
-  color: #fcf9f9;
-  background: #232222;
   padding: 20px;
   width: calc(100vw - 80px - 25px);
 
@@ -23,6 +21,8 @@ export const Input = styled.input`
   }
 
   @media (min-width: 800px) {
+    color: #fcf9f9;
+    background: #232222;
     font-size: 0.9rem;
     width: 440px;
   }
@@ -44,7 +44,9 @@ export const Button = styled.button`
     margin-left: 30px;
     width: 100px;
   }
+
   transition: all 0.2s ease-in-out;
+
   @media (hover: hover) {
     :hover {
       background: #fcf9f9;

@@ -2,10 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  font-size: 1.1rem;
-  font-weight: bold;
   width: 100%;
-  display: flex;
   justify-content: center;
 
   @media (max-width: 799px) {
@@ -15,39 +12,6 @@ export const Wrapper = styled.div`
     bottom: 78px;
   }
 `;
-
-export const Button = styled.button`
-  margin-top: 10px;
-  margin-right: 20px;
-  height: 47px;
-  border-radius: 2px;
-  border: 0;
-  font-weight: bold;
-  cursor: pointer;
-  background: #232222;
-  color: #fcf9f9;
-
-  transition: all 0.2s ease-in-out;
-
-  @media (min-width: 800px) {
-    width: 202px;
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 799px) {
-    font-size: 0.9rem;
-    width: 120px;
-  }
-
-  @media (hover: hover) {
-    :hover {
-      background: #fcf9f9;
-      color: #232222;
-      border: 2px solid #574b90;
-    }
-  }
-`;
-
 export const Span = styled.span`
   margin-top: 10px;
   margin-right: 20px;
@@ -68,6 +32,38 @@ export const Span = styled.span`
   @media (max-width: 799px) {
     font-size: 0.9rem;
     width: 120px;
+  }
+`;
+
+export const Button = styled.button`
+  cursor: pointer;
+  background: #232222;
+  margin-top: 10px;
+  margin-right: 20px;
+  height: 47px;
+  border-radius: 2px;
+  border: 0;
+  font-weight: bold;
+  color: #fcf9f9;
+
+  transition: all 0.2s ease-in-out;
+
+  @media (min-width: 800px) {
+    width: 202px;
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 799px) {
+    font-size: 0.9rem;
+    width: 120px;
+  }
+
+  @media (hover: hover) {
+    :hover {
+      background: #fcf9f9;
+      color: #232222;
+      border: 2px solid #574b90;
+    }
   }
 `;
 

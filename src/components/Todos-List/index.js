@@ -63,7 +63,6 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(toogleToDo(id));
   },
   hadleRemoveToDo: (id) => (e) => {
-    console.log('remove', id);
     dispatch(removeToDo(id));
   },
 });
