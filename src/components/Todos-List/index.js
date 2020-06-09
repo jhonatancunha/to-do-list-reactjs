@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 
 import { connect } from 'react-redux';
@@ -23,6 +22,7 @@ const getVisible = (todos, activeFilter) => {
     [filterActions.SHOW_ACTIVE]: todos.filter((item) => !item.completed),
   };
 
+  console.log(filterItems[activeFilter]);
   return filterItems[activeFilter];
 };
 
@@ -33,8 +33,8 @@ const TodosList = ({
   hadleRemoveToDo,
 }) => (
   <Wrapper>
+    {console.log(listTodos)}
     {getVisible(listTodos, activeFilter).map((item) => (
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
       <Line key={item.id}>
         {item.completed ? <Completed /> : <Active />}
 

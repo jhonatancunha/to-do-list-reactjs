@@ -15,10 +15,14 @@ const Form = ({ handleAddToDo }) => (
 
 const mapDispatchToProps = (dispatch) => ({
   handleAddToDo: (e) => {
-    e.preventDefault();
-    if (e.target.todo.value === '') return;
-    dispatch(addToDo(e.target.todo.value));
-    e.target.todo.value = '';
+    try {
+      e.preventDefault();
+      if (e.target.todo.value === '') return;
+      dispatch(addToDo(e.target.todo.value));
+      e.target.todo.value = '';
+    } catch (err) {
+      console.log(err);
+    }
   },
 });
 
