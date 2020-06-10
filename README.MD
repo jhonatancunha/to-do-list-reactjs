@@ -17,7 +17,7 @@
 
 
 <p align="center">
-    Aplição de ToDoList para você organizar todas as suas tarefas em um lugar só!
+    Aplicação de ToDoList para você organizar todas as suas tarefas em um lugar só!
 </p>
 
 <br>
